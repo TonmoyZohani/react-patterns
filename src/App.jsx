@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { faker } from "@faker-js/faker";
 import "./App.css";
+import withToggles from "./HOC";
 
 const products = Array.from({ length: 20 }, () => {
   return {
@@ -75,8 +76,7 @@ function List({ title, items, render }) {
 }
 
 export default function App() {
-
-  // const ProductListWithToggles = witht
+  const ProductListWithToggles = withToggles(ProductList); // Send the productlist into the Higher order fun
 
   return (
     <div>
@@ -100,6 +100,7 @@ export default function App() {
         /> */}
         <div className="col-2">
           <ProductList title="Products" items={products} />
+          <ProductListWithToggles title="Products Higher Order" items={products} />
         </div>
       </div>
     </div>
