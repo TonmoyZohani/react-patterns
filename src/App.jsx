@@ -46,7 +46,7 @@ function CompanyItem({ company, defaultVisibility }) {
   );
 }
 
-function List({ title, items,render }) {
+function List({ title, items, render }) {
   const [isOpen, setIsOpen] = useState(true);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
@@ -85,6 +85,14 @@ export default function App() {
           items={products}
           render={(product) => (
             <ProductItem key={product.productName} product={product} />
+          )}
+        />
+
+        <List
+          title="Comapanies"
+          items={companies}
+          render={(company) => (
+            <CompanyItem key={company.companyName} company={company} />
           )}
         />
       </div>
