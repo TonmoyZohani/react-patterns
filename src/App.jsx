@@ -75,12 +75,15 @@ function List({ title, items, render }) {
 }
 
 export default function App() {
+
+  // const ProductListWithToggles = witht
+
   return (
     <div>
       <h1>Render Props Demo</h1>
 
       <div className="col-2">
-        <List
+        {/* <List
           title="Products"
           items={products}
           render={(product) => (
@@ -92,9 +95,12 @@ export default function App() {
           title="Comapanies"
           items={companies}
           render={(company) => (
-            <CompanyItem key={company.companyName} company={company} />
+            <CompanyItem key={company.companyName} company={company} defaultVisibility={false}/>
           )}
-        />
+        /> */}
+        <div className="col-2">
+          <ProductList title="Products" items={products} />
+        </div>
       </div>
     </div>
   );
