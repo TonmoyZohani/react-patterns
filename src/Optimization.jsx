@@ -1,17 +1,20 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 // Components
-const IncreaseCount = (props) => {
+const IncreaseCount = memo((props) => {
   console.log("Button -> Count");
   return <button onClick={props.onIncrementCount}>Increase Count</button>;
-};
-const IncreaseAge = (props) => {
+});
+
+const IncreaseAge =memo((props) => {
   console.log("Button -> Age");
   return <button onClick={props.onIncrementAge}>Increase Age</button>;
-};
-const Title = (props) => {
+});
+
+const Title =memo((props) => {
   console.log(`Title -> ${props.title}`);
   return <h1>{props.title}</h1>;
-};
+});
+
 //Main Component
 function Optimization() {
   //States
